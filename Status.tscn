@@ -1,0 +1,170 @@
+[gd_scene load_steps=16 format=3 uid="uid://dtai6poxgqfak"]
+
+[ext_resource type="Script" path="res://Status.gd" id="1_ih7xk"]
+[ext_resource type="Texture2D" uid="uid://cx56psrgjkuaw" path="res://assets/energy.png" id="2_idgis"]
+[ext_resource type="Texture2D" uid="uid://y711nsh2yksv" path="res://assets/Food_logo.png" id="3_s2dul"]
+[ext_resource type="Texture2D" uid="uid://dgkrsdtqtcqdx" path="res://assets/Water_logo.png" id="4_eucux"]
+[ext_resource type="Texture2D" uid="uid://6a5wv7qqfny3" path="res://assets/Health_logo.png" id="5_7jbhu"]
+
+[sub_resource type="Theme" id="Theme_r11ft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vpu04"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsusp"]
+bg_color = Color(0.184314, 0.443137, 0.780392, 1)
+
+[sub_resource type="GDScript" id="GDScript_qdajw"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqdxt"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq422"]
+bg_color = Color(0.615686, 0.345098, 0.14902, 1)
+
+[sub_resource type="GDScript" id="GDScript_yrcdh"]
+script/source = "extends ProgressBar
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func _on_timer_hunger():
+	$Hunger_bar.value_changed -= 1
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv101"]
+bg_color = Color(0.32549, 0.662745, 0.733333, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wwl1"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 1)
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1jtp"]
+bg_color = Color(0.878431, 0.294118, 0.231373, 1)
+border_color = Color(0, 0, 0, 1)
+
+[node name="Status" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 20.0
+offset_top = 21.0
+offset_right = 486.0
+offset_bottom = 136.0
+script = ExtResource("1_ih7xk")
+
+[node name="Energy_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 241.0
+offset_top = 24.0
+offset_right = 414.0
+offset_bottom = 37.0
+theme = SubResource("Theme_r11ft")
+theme_override_styles/background = SubResource("StyleBoxFlat_vpu04")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rsusp")
+value = 100.0
+show_percentage = false
+script = SubResource("GDScript_qdajw")
+
+[node name="Energy_loss" type="Timer" parent="Energy_bar"]
+wait_time = 5.0
+autostart = true
+
+[node name="Energy_gain" type="Timer" parent="Energy_bar"]
+autostart = true
+
+[node name="Energy_logo" type="Sprite2D" parent="Energy_bar"]
+scale = Vector2(0.481771, 0.513672)
+texture = ExtResource("2_idgis")
+
+[node name="Hunger_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 61.0
+offset_right = 217.0
+offset_bottom = 74.0
+theme = SubResource("Theme_r11ft")
+theme_override_styles/background = SubResource("StyleBoxFlat_lqdxt")
+theme_override_styles/fill = SubResource("StyleBoxFlat_eq422")
+value = 100.0
+show_percentage = false
+script = SubResource("GDScript_yrcdh")
+
+[node name="Hunger_loss" type="Timer" parent="Hunger_bar"]
+autostart = true
+
+[node name="Hunger_logo" type="Sprite2D" parent="Hunger_bar"]
+position = Vector2(-3, 7)
+scale = Vector2(0.964062, 0.875)
+texture = ExtResource("3_s2dul")
+
+[node name="Thrist_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 61.0
+offset_right = 415.0
+offset_bottom = 74.0
+theme = SubResource("Theme_r11ft")
+theme_override_styles/background = SubResource("StyleBoxFlat_vpu04")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vv101")
+value = 100.0
+show_percentage = false
+script = SubResource("GDScript_qdajw")
+
+[node name="Thirst_loss" type="Timer" parent="Thrist_bar"]
+autostart = true
+
+[node name="Thirst_logo" type="Sprite2D" parent="Thrist_bar"]
+position = Vector2(-6, 5)
+texture = ExtResource("4_eucux")
+
+[node name="Health_bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 24.0
+offset_right = 217.0
+offset_bottom = 37.0
+theme = SubResource("Theme_r11ft")
+theme_override_styles/background = SubResource("StyleBoxFlat_8wwl1")
+theme_override_styles/fill = SubResource("StyleBoxFlat_r1jtp")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_ih7xk")
+
+[node name="Health_loss" type="Timer" parent="Health_bar"]
+autostart = true
+
+[node name="Health_gain" type="Timer" parent="Health_bar"]
+autostart = true
+
+[node name="Health_logo" type="Sprite2D" parent="Health_bar"]
+position = Vector2(-6, 4)
+scale = Vector2(0.55, 0.6)
+texture = ExtResource("5_7jbhu")
+
+[connection signal="timeout" from="Energy_bar/Energy_loss" to="." method="_on_timer_energy"]
+[connection signal="timeout" from="Energy_bar/Energy_gain" to="." method="_on_energy_gain_timeout"]
+[connection signal="timeout" from="Hunger_bar/Hunger_loss" to="." method="_on_timer_hunger"]
+[connection signal="timeout" from="Thrist_bar/Thirst_loss" to="." method="_on_timer_thirst"]
+[connection signal="timeout" from="Health_bar/Health_loss" to="." method="_on_timer_health"]
+[connection signal="timeout" from="Health_bar/Health_gain" to="." method="_on_health_gain_timeout"]

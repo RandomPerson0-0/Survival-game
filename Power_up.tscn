@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dllas0n07mpn"]
+
+[ext_resource type="Script" path="res://Power_up.gd" id="1_57tj7"]
+[ext_resource type="Texture2D" uid="uid://6a5wv7qqfny3" path="res://assets/Health_logo.png" id="2_h7qff"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44owt"]
+
+[node name="Power_up" type="Area2D"]
+script = ExtResource("1_57tj7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.36, 0.32)
+texture = ExtResource("2_h7qff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_44owt")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

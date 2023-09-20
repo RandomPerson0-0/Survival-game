@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2bqtxfroq1it"]
+
+[ext_resource type="Script" path="res://Number_of_enemies.gd" id="1_32fjr"]
+
+[node name="Number_of_enemies" type="RichTextLabel"]
+offset_right = 661.0
+offset_bottom = 211.0
+script = ExtResource("1_32fjr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="enemy_added" from="." to="." method="_on_enemy_added"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

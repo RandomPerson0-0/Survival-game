@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba7v2gc1qqil1"]
+
+[ext_resource type="Script" path="res://Main_menu.gd" id="1_til7f"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 422.0
+offset_bottom = 354.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_til7f")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1589.0
+offset_bottom = 1020.0
+color = Color(0.8771, 0.98, 0.8036, 1)
+
+[node name="start" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 14.8583
+offset_top = 16.6115
+offset_right = 154.858
+offset_bottom = 66.6115
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="quit" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 17.5594
+offset_top = 174.706
+offset_right = 88.5594
+offset_bottom = 224.706
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[node name="how_to_play" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 14.8583
+offset_top = 95.6585
+offset_right = 198.858
+offset_bottom = 145.659
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "How To Play"
+
+[connection signal="pressed" from="ColorRect/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="ColorRect/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ColorRect/how_to_play" to="." method="_on_how_to_play_pressed"]

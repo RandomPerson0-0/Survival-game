@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwsrnv7wxlav1"]
+
+[ext_resource type="Script" path="res://Timer.gd" id="1_xbaf0"]
+
+[node name="Timer" type="RichTextLabel"]
+offset_right = 163.0
+offset_bottom = 88.0
+theme_override_font_sizes/normal_font_size = 30
+script = ExtResource("1_xbaf0")
+
+[node name="Countdown" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timer_stop" from="." to="." method="_on_timer_stop"]
+[connection signal="timeout" from="Countdown" to="." method="_on_countdown_timeout"]
