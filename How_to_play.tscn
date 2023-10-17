@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://sqabcq60bn56"]
+[gd_scene load_steps=3 format=3 uid="uid://cr8hp02uj5erv"]
 
 [ext_resource type="Script" path="res://How_to_play.gd" id="1_w7tx2"]
+[ext_resource type="Texture2D" uid="uid://c487xabsjwpp4" path="res://assets/Walking_animation.PNG" id="2_6ujri"]
 
 [node name="How to Play" type="Node2D"]
 script = ExtResource("1_w7tx2")
@@ -20,11 +21,11 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 41
 text = "How To Play
 
-Goal - You need to Survive by making your player find food and water as long as you can. There will be two enemies who will kill you so try to avoid them by moving and jumping around to avoid them.
+Goal - Bibby the Cat needs to survive by find food and water as long as you can. There will be two enemies who will kill you so try to avoid them by moving and jumping around to avoid them.
 
 Movement  - Use AD or Arrows keys to move around 
 				      - Shift to sprint
-					  - Press space or W and the up arrow to jump
+					  - Press space, W, or the up arrow to jump around
 
 "
 
@@ -45,6 +46,12 @@ offset_right = 73.0
 offset_bottom = 643.0
 theme_override_font_sizes/font_size = 41
 text = "Return"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(874, 647)
+scale = Vector2(0.212484, 0.214606)
+texture = ExtResource("2_6ujri")
+vframes = 3
 
 [connection signal="pressed" from="ColorRect/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="ColorRect/Return" to="." method="_on_return_pressed"]

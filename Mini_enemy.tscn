@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Mini_enemy.gd" id="1_bct2n"]
+[ext_resource type="Texture2D" uid="uid://bnwl2spwhg22t" path="res://assets/side_enemy.png" id="2_cu2ny"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ccd1l"]
+radius = 11.0698
+height = 29.0987
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1qhnr"]
+radius = 2.47857
+
+[node name="Side_enemy" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_bct2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.460288, 0.444492)
+texture = ExtResource("2_cu2ny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 4)
+rotation = 0.605629
+shape = SubResource("CapsuleShape2D_ccd1l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(12, -2.38419e-07)
+rotation = 5.1557
+shape = SubResource("CapsuleShape2D_1qhnr")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

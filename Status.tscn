@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dtai6poxgqfak"]
+[gd_scene load_steps=16 format=3 uid="uid://coswgls8qgkjj"]
 
 [ext_resource type="Script" path="res://Status.gd" id="1_ih7xk"]
-[ext_resource type="Texture2D" uid="uid://cx56psrgjkuaw" path="res://assets/energy.png" id="2_idgis"]
+[ext_resource type="Texture2D" uid="uid://cx56psrgjkuaw" path="res://assets/Energy_logo.png" id="2_spwqi"]
 [ext_resource type="Texture2D" uid="uid://y711nsh2yksv" path="res://assets/Food_logo.png" id="3_s2dul"]
 [ext_resource type="Texture2D" uid="uid://dgkrsdtqtcqdx" path="res://assets/Water_logo.png" id="4_eucux"]
 [ext_resource type="Texture2D" uid="uid://6a5wv7qqfny3" path="res://assets/Health_logo.png" id="5_7jbhu"]
@@ -95,7 +95,7 @@ autostart = true
 
 [node name="Energy_logo" type="Sprite2D" parent="Energy_bar"]
 scale = Vector2(0.481771, 0.513672)
-texture = ExtResource("2_idgis")
+texture = ExtResource("2_spwqi")
 
 [node name="Hunger_bar" type="ProgressBar" parent="."]
 layout_mode = 0
@@ -111,6 +111,7 @@ show_percentage = false
 script = SubResource("GDScript_yrcdh")
 
 [node name="Hunger_loss" type="Timer" parent="Hunger_bar"]
+wait_time = 0.5
 autostart = true
 
 [node name="Hunger_logo" type="Sprite2D" parent="Hunger_bar"]
@@ -132,6 +133,7 @@ show_percentage = false
 script = SubResource("GDScript_qdajw")
 
 [node name="Thirst_loss" type="Timer" parent="Thrist_bar"]
+wait_time = 0.5
 autostart = true
 
 [node name="Thirst_logo" type="Sprite2D" parent="Thrist_bar"]
@@ -155,6 +157,7 @@ script = ExtResource("1_ih7xk")
 autostart = true
 
 [node name="Health_gain" type="Timer" parent="Health_bar"]
+wait_time = 0.5
 autostart = true
 
 [node name="Health_logo" type="Sprite2D" parent="Health_bar"]

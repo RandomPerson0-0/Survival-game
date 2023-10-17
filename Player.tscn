@@ -1,22 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://1vc1rd1q8cod"]
+[gd_scene load_steps=11 format=3 uid="uid://bnt76hbdhko5h"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_exgx1"]
-[ext_resource type="Texture2D" uid="uid://yhuxrrlysu31" path="res://assets/PlayerTemp.png" id="2_36xtn"]
+[ext_resource type="Texture2D" uid="uid://ccodlks2rw33i" path="res://assets/Concept_art.PNG" id="2_4hq8g"]
+[ext_resource type="Texture2D" uid="uid://c487xabsjwpp4" path="res://assets/Walking_animation.PNG" id="3_v5wy0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rf2ih"]
-radius = 25.02
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dasc"]
+atlas = ExtResource("2_4hq8g")
+region = Rect2(0, 0, 1837, 1600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j5fh"]
+atlas = ExtResource("3_v5wy0")
+region = Rect2(0, 0, 2755, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2smd"]
+atlas = ExtResource("3_v5wy0")
+region = Rect2(2755, 0, 2755, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrfu6"]
+atlas = ExtResource("3_v5wy0")
+region = Rect2(0, 0, 2755, 1500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58vpx"]
+atlas = ExtResource("3_v5wy0")
+region = Rect2(2755, 0, 2755, 1500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2vbdc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3dasc")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j5fh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2smd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrfu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58vpx")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 2.5
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2y0ym"]
+radius = 29.0
+height = 70.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_exgx1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-texture = ExtResource("2_36xtn")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-15, -12)
+scale = Vector2(0.0571584, 0.0584283)
+sprite_frames = SubResource("SpriteFrames_2vbdc")
+animation = &"Idle"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_rf2ih")
+position = Vector2(-18, -8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_2y0ym")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0

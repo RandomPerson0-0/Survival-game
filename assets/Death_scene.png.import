@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx56psrgjkuaw"
-path="res://.godot/imported/Energy_logo.png-3a24c678f4e4c7e465f7eae87b22a11c.ctex"
+uid="uid://3w53dgqo2yss"
+path="res://.godot/imported/Death_scene.png-1125744540782fcf1a962f3349b207e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Energy_logo.png"
-dest_files=["res://.godot/imported/Energy_logo.png-3a24c678f4e4c7e465f7eae87b22a11c.ctex"]
+source_file="res://assets/Death_scene.png"
+dest_files=["res://.godot/imported/Death_scene.png-1125744540782fcf1a962f3349b207e0.ctex"]
 
 [params]
 

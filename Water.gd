@@ -21,4 +21,6 @@ func _on_body_shape_entered(body_rid, body, body_shape_index, local_shape_index)
 
 
 func _on_area_entered(area):
+	# if anything other than the player touches the water, it disappears but it 
+	# will not affect the status of the water bar
 	queue_free()

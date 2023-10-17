@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx56psrgjkuaw"
-path="res://.godot/imported/Energy_logo.png-3a24c678f4e4c7e465f7eae87b22a11c.ctex"
+uid="uid://bv1j7wo2yh435"
+path="res://.godot/imported/Scrap_energy_logo.png-478c1c81686eb50632f2713b96972862.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Energy_logo.png"
-dest_files=["res://.godot/imported/Energy_logo.png-3a24c678f4e4c7e465f7eae87b22a11c.ctex"]
+source_file="res://assets/Scrap_energy_logo.png"
+dest_files=["res://.godot/imported/Scrap_energy_logo.png-478c1c81686eb50632f2713b96972862.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ba7v2gc1qqil1"]
+[gd_scene load_steps=3 format=3 uid="uid://ba7v2gc1qqil1"]
 
 [ext_resource type="Script" path="res://Main_menu.gd" id="1_til7f"]
+[ext_resource type="Texture2D" uid="uid://ccodlks2rw33i" path="res://assets/Concept_art.PNG" id="2_1mn70"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -18,6 +19,11 @@ layout_mode = 0
 offset_right = 1589.0
 offset_bottom = 1020.0
 color = Color(0.8771, 0.98, 0.8036, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(858, 495)
+scale = Vector2(0.250862, 0.209101)
+texture = ExtResource("2_1mn70")
 
 [node name="start" type="Button" parent="ColorRect"]
 layout_mode = 0

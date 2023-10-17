@@ -1,28 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://fgubtkpve5l3"]
+[gd_scene load_steps=3 format=3 uid="uid://bets0mna70mv0"]
 
 [ext_resource type="Script" path="res://End.gd" id="1_semlc"]
-[ext_resource type="PackedScene" uid="uid://d2bqtxfroq1it" path="res://Number_of_enemies.tscn" id="2_eswd3"]
+[ext_resource type="Texture2D" uid="uid://3w53dgqo2yss" path="res://assets/Death_scene.png" id="2_24bmt"]
 
 [node name="End" type="Node2D"]
 script = ExtResource("1_semlc")
 
-[node name="Play_Again" type="Button" parent="."]
-offset_left = 621.0
-offset_top = 438.0
-offset_right = 892.0
-offset_bottom = 495.0
-theme_override_font_sizes/font_size = 30
-text = "Play Again?"
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1745.0
+offset_bottom = 1203.0
 
-[node name="Quit" type="Button" parent="."]
-offset_left = 621.0
-offset_top = 568.0
-offset_right = 892.0
-offset_bottom = 625.0
-theme_override_font_sizes/font_size = 30
-text = "Quit?"
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect"]
+position = Vector2(718, 471)
+scale = Vector2(0.801, 0.8135)
+texture = ExtResource("2_24bmt")
+flip_h = true
 
-[node name="Menu" type="Button" parent="."]
+[node name="Menu" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 623.0
 offset_top = 503.0
 offset_right = 894.0
@@ -31,25 +26,46 @@ theme_override_font_sizes/font_size = 30
 text = "Menu?
 "
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 622.0
-offset_top = 335.0
-offset_right = 891.0
-offset_bottom = 494.0
+[node name="Quit" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 568.0
+offset_right = 892.0
+offset_bottom = 625.0
+theme_override_font_sizes/font_size = 30
+text = "Quit?"
+
+[node name="You Died" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 621.0
+offset_top = 369.0
+offset_right = 890.0
+offset_bottom = 432.0
 theme_override_font_sizes/normal_font_size = 30
 text = "		You Died!
 "
 
-[node name="Number_of_enemies" parent="RichTextLabel" instance=ExtResource("2_eswd3")]
-visible = false
+[node name="Play_Again" type="Button" parent="ColorRect"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 274.0
-offset_bottom = 104.0
-theme_override_font_sizes/normal_font_size = 30
+offset_left = 621.0
+offset_top = 438.0
+offset_right = 892.0
+offset_bottom = 495.0
+theme_override_font_sizes/font_size = 30
+text = "Play Again?"
 
-[connection signal="pressed" from="Play_Again" to="." method="_on_play_again_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
-[connection signal="ready" from="RichTextLabel" to="." method="_on_rich_text_label_ready"]
+[node name="RichTextLabel2" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_top = 919.0
+offset_right = 292.0
+offset_bottom = 967.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 10
+text = "Art - Grace Ren
+Contributors - Grace, Dion, Bianca, Lexi, Luke and Kevin
+Created by - Rachel Ren"
+
+[connection signal="pressed" from="ColorRect/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="ColorRect/Quit" to="." method="_on_quit_pressed"]
+[connection signal="ready" from="ColorRect/You Died" to="." method="_on_rich_text_label_ready"]
+[connection signal="pressed" from="ColorRect/Play_Again" to="." method="_on_play_again_pressed"]
