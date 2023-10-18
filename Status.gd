@@ -98,13 +98,10 @@ func _on_side_weapon_body_entered(body):
 func _on_energy_gain_timeout():
 	if not Input.is_action_pressed("energy"):
 			current_energy += 1
-			print("increase")
 	if current_energy < min:
 		out_of_energy.emit()
-		print("signaled player")
 	if current_energy > 10:
 		energy_gain.emit()
-		print("player moves")
 	$Energy_bar.set_value(current_energy)
 
 

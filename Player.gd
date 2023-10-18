@@ -29,7 +29,6 @@ func _on_player_speed():
 	jump_velocity = 0
 	sprint = 0
 	orginal_speed = 0
-	print("player stops")
 
 
 func _on_player_speed_change():
@@ -39,7 +38,6 @@ func _on_player_speed_change():
 	jump_velocity = -300
 	sprint = 600
 	orginal_speed = 300
-	print("speed return")
 
 
 func _physics_process(delta):
