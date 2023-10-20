@@ -1,13 +1,12 @@
 extends Area2D
 signal water
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	#this connects the water signal to the status where it then connects on the function
 	water.connect(get_node("/root/Main/UI/Status")._on_water_body_entered)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 

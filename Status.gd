@@ -9,8 +9,9 @@ signal out_of_energy
 var min = 0
 var max = 100
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	# connects specific function, to another function in another scene
 	out_of_energy.connect(get_node("/root/Main/Player")._on_player_speed)
 	energy_gain.connect(get_node("/root/Main/Player")._on_player_speed_change)
 

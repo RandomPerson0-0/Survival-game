@@ -6,11 +6,14 @@ var stop = 0
 
 signal enemy
 
+
 func _ready():
+	# connects specific function, to another function in another scene
 	enemy.connect(get_node("/root/Main/UI/Status")._on_enemy_body_shape_entered)
 
 
 func _physics_process(delta):
+	# the enemy will move towards the play position
 	look_at(get_node("/root/Main/Player").position)
 	move_local_x(speed * delta)
 

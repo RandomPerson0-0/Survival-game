@@ -2,12 +2,12 @@ extends Area2D
 
 signal power_up
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	# connects specific function, to another function in another scene
 	power_up.connect(get_node("/root/Main/UI/Status")._on_power_up_body_entered)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 

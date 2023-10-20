@@ -3,12 +3,12 @@ extends Area2D
 var speed = 300
 signal weapon
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
+	# connects specific function, to another function in another scene
 	weapon.connect(get_node("/root/Main//UI/Status")._on_side_weapon_body_entered)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	# the side enemy will follow the player position
 	look_at(get_node("/root/Main/Player").position)

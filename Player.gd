@@ -1,21 +1,18 @@
 extends CharacterBody2D
 
+signal player_speed_change
+signal player_speed
 var sprint = 600.0
 var orginal_speed = 300.0
 @export var speed: float = 300.0
 @export var jump_velocity: float = -150.0
 @onready var animated_sprite : AnimatedSprite2D = $AnimatedSprite2D
 
-
 var screen_size
-
-signal player_speed_change
-signal player_speed
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var animation_lock: bool = false
 var direction: Vector2 = Vector2.ZERO
+
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -41,8 +38,6 @@ func _on_player_speed_change():
 
 
 func _physics_process(delta):
-	
-	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -52,7 +47,6 @@ func _physics_process(delta):
 	else:
 		pass
 	
-	# Get the input direction and handle the movement/deceleration
 	direction = Input.get_vector("left", "right", "up", "down")
 	
 	if direction:
@@ -92,3 +86,4 @@ func _update_facing_animation():
 		animated_sprite.flip_h = false
 	elif direction.x < 0:
 		animated_sprite.flip_h = true
+

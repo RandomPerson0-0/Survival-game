@@ -1,12 +1,12 @@
 extends Area2D
+
 signal food
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	# connects specific function, to another function in another scene
 	food.connect(get_node("/root/Main/UI/Status")._on_food_body_entered)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
